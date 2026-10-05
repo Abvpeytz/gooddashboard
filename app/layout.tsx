@@ -1,11 +1,17 @@
 import type { Metadata } from "next";
-import { Plus_Jakarta_Sans } from "next/font/google";
+import { Plus_Jakarta_Sans, Fraunces } from "next/font/google";
 import '@/app/ui/globals.css';
 
 const jakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700", "800"],
   variable: "--font-jakarta",
+});
+
+const fraunces = Fraunces({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800"],
+  variable: "--font-fraunces",
 });
 
 export const metadata: Metadata = {
@@ -17,9 +23,9 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang='en'
-      className={`${jakarta.variable} ${jakarta.variable} h-full antialiased`}
+      className={`${jakarta.variable} ${fraunces.variable} h-full antialiased`}
     >
-      <body className='min-h-full flex flex-col font-base'>{children}</body>
+      <body className='min-h-full flex flex-col font-base bg-brand-500'>{children}</body>
     </html>
   );
 }
