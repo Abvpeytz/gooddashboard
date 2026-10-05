@@ -1,12 +1,16 @@
-import Card from '@/app/ui/dashboard/card';
+import { Suspense } from "react";
+import CardWrapper from '../ui/dashboard/card-wrapper';
 
-export default function Page() {
+function Loading() {
+  return <h2>🌀 Loading...</h2>;
+}
+
+export default async function Page() {
   return (
     <div className='good-dashboard__dashboard grid grid-rows-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:grid-rows-1 gap-4'>
-      <Card title="Online Safety" bgColor='bg-brand-100' progressStatus={80}/>
-      <Card title="Time Registration" bgColor='bg-brand-200' progressStatus={60} />
-      <Card title="Code Quality" bgColor='bg-brand-300' />
-      <Card title="Client Workflows" bgColor='bg-brand-400' textColor='text-white' progressStatus={45} />
+      <Suspense fallback={<Loading />}>
+        <CardWrapper />
+      </Suspense>
     </div>
   );
 }

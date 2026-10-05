@@ -19,8 +19,6 @@ export default function SideNav() {
 
   return (
     <div className='good-dashboard__sidenav bg-white rounded-2xl p-5 h-svh'>
-      <h2>A Good Sidenav</h2>
-
       {links.map((link) => {
         const LinkIcon = link.icon;
         return (

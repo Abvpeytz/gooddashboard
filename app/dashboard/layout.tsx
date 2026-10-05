@@ -12,11 +12,11 @@ export const metadata: Metadata = {
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <div className='grid grid-rows-2 grid-cols-1 md:grid-cols-[300px_1fr] md:grid-rows-1 gap-5 m-5'>
+    <div className='grid grid-rows-2 grid-cols-1 md:grid-cols-[200px_1fr] md:grid-rows-1 gap-5 m-5'>
       <div className='w-full flex-none'>
         <SideNav />
       </div>
-      <div className='bg-white rounded-2xl p-5'>{children}</div>
+      <main className='bg-white rounded-2xl p-5'>{children}</main>
     </div>
   );
 }

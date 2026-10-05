@@ -2,7 +2,9 @@ import Link from "next/link";
 
 interface CardProps {
   progressStatus?: number;
-  title: string;
+  title?: string;
+  slug?: string;
+  description?: string;
   textColor?: string;
   bgColor?: string;
 }
@@ -10,6 +12,8 @@ interface CardProps {
 export default function Card({
   progressStatus = 0,
   title,
+  slug,
+  description,
   bgColor,
   textColor,
 }: CardProps) {
@@ -22,28 +26,24 @@ export default function Card({
           {title}
         </h2>
       )}
-      <p className='font-medium'>
-        Venenatis quis sit lacinia. ut tortor bibendum vel tellus bibendum Morbi
-        libero nibh dolor vel auctor quis vel ullamcorper ut dignissim Maecenas
-        sit vestibulum.
-      </p>
-      <div>
+      {description && <p className='font-medium'>{description}</p>}
+      {/* <div>
         <ul className='list-disc pl-4'>
           <li>Set up two factor authentication</li>
           <li>Create your Harvest account</li>
           <li>Submit your first merge request</li>
         </ul>
-      </div>
+      </div> */}
       <div className='mt-auto'>{progressStatus}%</div>
-      <div className='w-full bg-gray-200 rounded-full h-2'>
+      <div className='w-full bg-brand-400 rounded-full h-2'>
         <div
-          className='bg-black h-2 rounded-full'
+          className='bg-brand-200 h-2 rounded-full'
           style={{ width: progressStatus + "%" }}
         ></div>
       </div>
       <Link
         className='inline-block rounded-3xl pt-2 pb-2 pl-4 pr-4 font-bold bg-black text-white transition-all hover:transition-all hover:bg-transparent hover:text-black'
-        href={`/dashboard/course/${title}`}
+        href={`/dashboard/course/${slug ? slug : title}`}
       >
         {progressStatus !== null && progressStatus !== 0 ? "Continue" : "Start"}
       </Link>
