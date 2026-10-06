@@ -12,7 +12,8 @@ export default async function CardWrapper() {
           title={course.title}
           slug={course.slug}
           description={course.description}
-          bgColor={course.theme}
+          textColor={course.textColor}
+          bgColor={course.bgColor}
           progressStatus={course.progress}
         />
       ))}

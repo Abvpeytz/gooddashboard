@@ -1,18 +1,6 @@
 import type { Metadata } from "next";
-import { Plus_Jakarta_Sans, Fraunces } from "next/font/google";
 import '@/app/ui/globals.css';
-
-const jakarta = Plus_Jakarta_Sans({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800"],
-  variable: "--font-jakarta",
-});
-
-const fraunces = Fraunces({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800"],
-  variable: "--font-fraunces",
-});
+import { fraunces, jakarta } from './ui/fonts';
 
 export const metadata: Metadata = {
   title: "Good Dashboard",

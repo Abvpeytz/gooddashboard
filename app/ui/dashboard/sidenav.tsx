@@ -18,22 +18,21 @@ export default function SideNav() {
   const pathname = usePathname();
 
   return (
-    <div className='good-dashboard__sidenav bg-white rounded-2xl p-5 h-svh'>
+    <div className='good-dashboard__sidenav bg-white rounded-2xl pt-5 h-svh'>
       {links.map((link) => {
-        const LinkIcon = link.icon;
         return (
           <Link
             key={link.name}
             href={link.href}
             className={clsx(
-              "flex h-12 grow items-center justify-center gap-2 text-sm font-medium md:flex-none md:justify-start text-brand-400",
+              "flex grow items-center justify-center gap-2 p-4 h-12 text-sm font-bold border-l-5 md:flex-none md:justify-start text-brand-400",
               {
-                "text-brand-500": pathname === link.href,
+                "border-white": pathname !== link.href,
+                "border-brand-400 bg-brand-500": pathname === link.href,
               },
             )}
           >
-            <LinkIcon className='w-6' />
-            <p className='hidden md:block'>{link.name}</p>
+            <span className='hidden uppercase md:block'>{link.name}</span>
           </Link>
         );
       })}

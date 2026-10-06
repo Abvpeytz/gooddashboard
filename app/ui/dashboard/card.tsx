@@ -19,7 +19,7 @@ export default function Card({
 }: CardProps) {
   return (
     <div
-      className={`good-dashboard__card flex flex-col items-start gap-3 p-4 rounded-2xl min-h-120 ${bgColor ? bgColor : ""} ${textColor ? textColor : ""}`}
+      className={`good-dashboard__card flex flex-col items-start gap-3 p-4 rounded-2xl ${bgColor ? bgColor : ""} ${textColor ? textColor : ""}`}
     >
       {title && (
         <h2 className='font-black text-4xl mt-4' lang='en'>
@@ -27,22 +27,15 @@ export default function Card({
         </h2>
       )}
       {description && <p className='font-medium'>{description}</p>}
-      {/* <div>
-        <ul className='list-disc pl-4'>
-          <li>Set up two factor authentication</li>
-          <li>Create your Harvest account</li>
-          <li>Submit your first merge request</li>
-        </ul>
-      </div> */}
       <div className='mt-auto'>{progressStatus}%</div>
-      <div className='w-full bg-brand-400 rounded-full h-2'>
+      <div className='w-full bg-white rounded-full h-2'>
         <div
-          className='bg-brand-200 h-2 rounded-full'
+          className='bg-black h-2 rounded-full'
           style={{ width: progressStatus + "%" }}
         ></div>
       </div>
       <Link
-        className='inline-block rounded-3xl pt-2 pb-2 pl-4 pr-4 font-bold bg-black text-white transition-all hover:transition-all hover:bg-transparent hover:text-black'
+        className='inline-block rounded-3xl py-2 px-4 font-bold bg-black text-white transition-all hover:transition-all hover:bg-transparent hover:text-black'
         href={`/dashboard/course/${slug ? slug : title}`}
       >
         {progressStatus !== null && progressStatus !== 0 ? "Continue" : "Start"}
