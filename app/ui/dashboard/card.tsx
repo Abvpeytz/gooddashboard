@@ -19,7 +19,7 @@ export default function Card({
 }: CardProps) {
   return (
     <div
-      className={`good-dashboard__card flex flex-col items-start gap-3 p-4 rounded-2xl ${bgColor ? bgColor : ""} ${textColor ? textColor : ""}`}
+      className={`good-dashboard__card flex flex-col items-start gap-3 p-4 rounded-2xl min-h-75 ${bgColor ? bgColor : ""} ${textColor ? textColor : ""}`}
     >
       {title && (
         <h2 className='font-black text-4xl mt-4' lang='en'>
@@ -36,7 +36,7 @@ export default function Card({
       </div>
       <Link
         className='inline-block rounded-3xl py-2 px-4 font-bold bg-black text-white transition-all hover:transition-all hover:bg-transparent hover:text-black'
-        href={`/dashboard/course/${slug ? slug : title}`}
+        href={`/dashboard/course/${slug}`}
       >
         {progressStatus > 0 ? "Continue" : "Start"}
       </Link>
