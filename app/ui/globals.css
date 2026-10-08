@@ -1,0 +1,31 @@
+@import "tailwindcss";
+
+@source inline("{bg,text}-brand-{100,200,300,400,500}");
+
+@theme inline {
+  --color-gray-100: #ececee;
+  --color-gray-200: #2e2c35;
+
+  --color-pink-100: #fcdad6;
+  --color-green-100: #f3fde0;
+  --color-peach-100: #ffe6d4;
+
+  --color-brand-100: #f2d396;
+  --color-brand-200: #d89478;
+  --color-brand-300: #f3eccf;
+  --color-brand-400: #496573;
+  --color-brand-500: #a5c0b9;
+
+  --font-base: var(--font-jakarta);
+  --font-heading: var(--font-fraunces);
+}
+
+body {
+  font-family: var(--font-base);
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-heading);
+}
