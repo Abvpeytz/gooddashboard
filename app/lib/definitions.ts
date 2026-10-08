@@ -14,3 +14,13 @@ export type Course = {
   textColor: string;
   bgColor: string;
 };
+
+export type Module = {
+  id: number;
+  slug: string;
+  title: string;
+  order_index: number;
+  completed: boolean;
+};
+
+export type CourseWithModules = Course & { modules: Module[] };

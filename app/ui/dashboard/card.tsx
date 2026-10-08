@@ -38,7 +38,7 @@ export default function Card({
         className='inline-block rounded-3xl py-2 px-4 font-bold bg-black text-white transition-all hover:transition-all hover:bg-transparent hover:text-black'
         href={`/dashboard/course/${slug ? slug : title}`}
       >
-        {progressStatus !== null && progressStatus !== 0 ? "Continue" : "Start"}
+        {progressStatus > 0 ? "Continue" : "Start"}
       </Link>
     </div>
   );

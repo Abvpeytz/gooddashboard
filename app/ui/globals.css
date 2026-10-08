@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@source inline("{bg,text}-brand-{100,200,300,400,500}");
+
 @theme inline {
   --color-gray-100: #ececee;
   --color-gray-200: #2e2c35;
