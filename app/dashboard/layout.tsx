@@ -6,7 +6,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       <div className='w-full flex-none'>
         <SideNav />
       </div>
-      <main className='bg-white rounded-2xl p-5'>{children}</main>
+      <main>{children}</main>
     </div>
   );
 }

@@ -6,17 +6,6 @@ const sql = postgres(process.env.POSTGRES_URL!, {
   prepare: false,
 });
 
-// export async function fetchCourses() {
-//   try {
-//     const data = await sql<Course[]>`SELECT * FROM courses`;
-
-//     return data;
-//   } catch (error) {
-//     console.error("Database Error:", error);
-//     throw new Error("Failed to fetch revenue data.");
-//   }
-// }
-
 export async function fetchCourses(userId: string) {
   try {
     return await sql<Course[]>`

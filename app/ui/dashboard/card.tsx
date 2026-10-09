@@ -19,18 +19,18 @@ export default function Card({
 }: CardProps) {
   return (
     <div
-      className={`good-dashboard__card flex flex-col items-start gap-3 p-4 rounded-2xl min-h-75 ${bgColor ? bgColor : ""} ${textColor ? textColor : ""}`}
+      className={`good-dashboard__card flex flex-col items-start gap-3 p-4 rounded-2xl min-h-75 bg-ink-100 ${bgColor ? bgColor : ""} ${textColor ? textColor : ""}`}
     >
       {title && (
-        <h2 className='font-black text-4xl mt-4' lang='en'>
+        <h2 className='font-medium text-3xl' lang='en'>
           {title}
         </h2>
       )}
       {description && <p className='font-medium'>{description}</p>}
       <div className='mt-auto'>{progressStatus}%</div>
-      <div className='w-full bg-white rounded-full h-2'>
+      <div className='w-full bg-ink-900 rounded-full h-2'>
         <div
-          className='bg-black h-2 rounded-full'
+          className='bg-sun-500 h-2 rounded-full'
           style={{ width: progressStatus + "%" }}
         ></div>
       </div>

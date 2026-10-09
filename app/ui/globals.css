@@ -1,20 +1,30 @@
 @import "tailwindcss";
 
-@source inline("{bg,text}-brand-{100,200,300,400,500}");
+@source inline("{bg,text}-{ink,sun,mist,cream}-{100,200,300,500,800,900}");
 
 @theme inline {
-  --color-gray-100: #ececee;
-  --color-gray-200: #2e2c35;
+  /* Ink: dark pills, the onboarding task card, text */
+  --color-ink-900: #1f1f21;
+  --color-ink-800: #2b2b2e;
+  --color-ink-500: #8b8b90; /* muted text, the 0% bar */
+  --color-ink-300: #c9c9ce;
+  --color-ink-100: #e4e4e7; /* inactive chart bars, dividers */
 
-  --color-pink-100: #fcdad6;
-  --color-green-100: #f3fde0;
-  --color-peach-100: #ffe6d4;
+  /* Sun: the single accent colour */
+  --color-sun-500: #ffd84d;
+  --color-sun-300: #ffe587;
+  --color-sun-200: #fff0b3;
+  --color-sun-100: #fff8d9;
 
-  --color-brand-100: #f2d396;
-  --color-brand-200: #d89478;
-  --color-brand-300: #f3eccf;
-  --color-brand-400: #496573;
-  --color-brand-500: #a5c0b9;
+  /* Mist: cool greys at the top-left of the background */
+  --color-mist-100: #f1f1f3;
+  --color-mist-200: #e6e7ea;
+  --color-mist-300: #d4d6dc;
+  --color-mist-500: #a9acb7;
+
+  /* Cream: card surfaces */
+  --color-cream-50: #fffdf6;
+  --color-cream-100: #fbf8ec;
 
   --font-base: var(--font-jakarta);
   --font-heading: var(--font-fraunces);

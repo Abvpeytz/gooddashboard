@@ -13,7 +13,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang='en'
       className={`${jakarta.variable} ${fraunces.variable} h-full antialiased`}
     >
-      <body className='min-h-full flex flex-col font-base bg-brand-500'>{children}</body>
+      <body className='min-h-full flex flex-col font-base bg-radial-[at_25%_25%] from-white to-sun-100'>{children}</body>
     </html>
   );
 }
