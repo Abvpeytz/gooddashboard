@@ -1,6 +1,7 @@
 import { notFound, redirect } from "next/navigation";
 import { fetchCourseBySlug } from "@/app/lib/data";
-import { createClient } from '@/app/lib/supabase/server';
+import { createClient } from "@/app/lib/supabase/server";
+import Module from "@/app/ui/dashboard/module";
 
 export default async function CoursePage({
   params,
@@ -19,18 +20,16 @@ export default async function CoursePage({
   if (!course) notFound();
 
   return (
-    <main>
-      <h1>{course.title}</h1>
-      <p>{course.description}</p>
-      <p>{course.progress}% complete</p>
+    <main className='grid grid-flow-row auto-rows-max grid-cols-1 md:grid-cols-2 gap-1 p-4 bg-ink-100 rounded-2xl h-full'>
+      <div className='col-span-2 row-span-1 p-4 bg-ink-800 text-white rounded-2xl'>
+        <h1 className='font-medium text-2xl'>{course.title}</h1>
+        <p>{course.description}</p>
+        <p>{course.progress}% complete</p>
+      </div>
 
-      <ul>
-        {course.modules.map((m) => (
-          <li key={m.id}>
-            {m.completed ? "✓" : "○"} {m.title}
-          </li>
-        ))}
-      </ul>
+      {course.modules.map((module) => (
+        <Module key={module.id} module={module} courseSlug={slug} />
+      ))}
     </main>
   );
 }

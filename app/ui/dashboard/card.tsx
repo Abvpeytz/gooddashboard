@@ -1,4 +1,5 @@
 import Link from "next/link";
+import ResetButton from "./reset-button";
 
 interface CardProps {
   progressStatus?: number;
@@ -40,6 +41,8 @@ export default function Card({
       >
         {progressStatus > 0 ? "Continue" : "Start"}
       </Link>
+
+      {slug && <ResetButton slug={slug} />}
     </div>
   );
 }

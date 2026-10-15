@@ -53,6 +53,7 @@ export async function fetchCourseBySlug(
         m.slug,
         m.title,
         m.order_index,
+        m.module_content,
         (up.completed_at IS NOT NULL) AS completed
       FROM modules m
       LEFT JOIN user_progress up
@@ -70,5 +71,40 @@ export async function fetchCourseBySlug(
   } catch (error) {
     console.error("Database Error:", error);
     throw new Error("Failed to fetch course.");
+  }
+}
+
+export async function deleteUserProgressByCourse(
+  userId: string,
+  courseSlug: string,
+) {
+  await sql`
+    DELETE FROM user_progress
+    WHERE user_id = ${userId}
+      AND module_id IN (
+        SELECT m.id FROM modules m
+        JOIN courses c ON c.id = m.course_id
+        WHERE c.slug = ${courseSlug}
+      )
+  `;
+}
+
+export async function toggleUserProgressForModule(
+  userId: string,
+  moduleId: number,
+  completed: boolean,
+) {
+  if (completed) {
+    await sql`
+      DELETE FROM user_progress
+      WHERE user_id = ${userId} AND module_id = ${moduleId}
+    `;
+  } else {
+    await sql`
+      INSERT INTO user_progress (user_id, module_id, completed_at)
+      VALUES (${userId}, ${moduleId}, NOW())
+      ON CONFLICT (user_id, module_id)
+      DO UPDATE SET completed_at = NOW()
+    `;
   }
 }
