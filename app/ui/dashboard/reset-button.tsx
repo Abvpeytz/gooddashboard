@@ -10,7 +10,7 @@ export default function ResetButton({ slug }: { slug: string }) {
         if (!confirm("Reset all progress for this course?")) e.preventDefault();
       }}
     >
-      <button type='submit' className='text-sm underline text-ink-900'>
+      <button type='submit' className='text-sm underline text-ink-900 cursor-pointer'>
         Reset progress
       </button>
     </form>

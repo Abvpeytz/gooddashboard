@@ -1,7 +1,7 @@
 export default function about() {
   return (
-    <div>
-      <h1>About the Good Dashboard</h1>
+    <div className='bg-gray p-4'>
+      <h1 className='text-3xl mb-2'>About the Good Dashboard</h1>
       <p className='w-1/2'>
         consectetur ligula dolor, adipiscing quis venenatis malesuada laoreet
         Nullam Suspendisse at. sapien luctus. sapien fringilla. Maecenas eu.

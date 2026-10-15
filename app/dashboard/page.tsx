@@ -11,11 +11,11 @@ export default async function Page() {
 
   return (
     <div className='good-dashboard__dashboard grid grid-flow-row auto-rows-max grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-1'>
-      <section className='col-span-1 md:col-span-2 lg:col-span-4 row-span-1 text-ink-900 py-8 px-4 rounded-2xl'>
+      <section className='col-span-1 md:col-span-2 lg:col-span-4 row-span-1 text-white py-8 px-4 rounded-2xl bg-radial-[at_25%_25%] from-green-dark to-green-lighter'>
         <h1 className='font-medium text-[42px]'>
           {user ? `Hej ${user?.user_metadata?.full_name}` : ""}
         </h1>
-        <p className='font-medium text-[20px] w-8/12'>
+        <p className='font-medium text-[20px] w-6/12'>
           <span className='font-bold'>
             Welcome to your onboarding experience.
           </span>

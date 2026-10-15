@@ -20,11 +20,10 @@ export default async function CoursePage({
   if (!course) notFound();
 
   return (
-    <main className='grid grid-flow-row auto-rows-max grid-cols-1 md:grid-cols-2 gap-1 p-4 bg-ink-100 rounded-2xl h-full'>
-      <div className='col-span-2 row-span-1 p-4 bg-ink-800 text-white rounded-2xl'>
-        <h1 className='font-medium text-2xl'>{course.title}</h1>
-        <p>{course.description}</p>
-        <p>{course.progress}% complete</p>
+    <main className='grid grid-flow-row auto-rows-max grid-cols-1 md:grid-cols-2 gap-1 p-4 bg-gray rounded-2xl h-full'>
+      <div className='flex flex-col gap-2 col-span-2 row-span-1 p-4 bg-ink-800 text-green rounded-2xl'>
+        <h1 className='font-medium text-4xl'>{course.title}</h1>
+        <p className='font-medium text-[32] w-6/12'>{course.description}</p>
       </div>
 
       {course.modules.map((module) => (

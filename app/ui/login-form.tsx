@@ -21,7 +21,7 @@ export default function LoginForm() {
 
   return (
     <form action={formAction} className='space-y-3'>
-      <div className='flex-1 rounded-lg bg-ink-900 px-6 pb-4 pt-8'>
+      <div className='flex flex-col rounded-lg bg-green px-6 pb-4 pt-8'>
         <h1 className={`${jakarta.className} mb-3 text-2xl text-white`}>
           Please log in to continue.
         </h1>
@@ -35,14 +35,14 @@ export default function LoginForm() {
             </label>
             <div className='relative'>
               <input
-                className='peer block w-full rounded-md border border-gray-200 py-2.25 pl-10 text-sm outline-2 placeholder:text-white'
+                className='peer block w-full rounded-md border border-green py-2.25 pl-10 text-sm outline-2 placeholder:text-white'
                 id='email'
                 type='email'
                 name='email'
                 placeholder='Enter your email address'
                 required
               />
-              <AtSymbolIcon className='pointer-events-none absolute left-3 top-1/2 h-4.5 w-4.5 -translate-y-1/2 text-gray-500 peer-focus:text-gray-900' />
+              <AtSymbolIcon className='pointer-events-none absolute left-3 top-1/2 h-4.5 w-4.5 -translate-y-1/2 text-white peer-focus:text-white/75' />
             </div>
           </div>
           <div className='mt-4'>
@@ -54,7 +54,7 @@ export default function LoginForm() {
             </label>
             <div className='relative'>
               <input
-                className='peer block w-full rounded-md border border-gray-200 py-2.25 pl-10 text-sm outline-2 placeholder:text-white'
+                className='peer block w-full rounded-md border border-green py-2.25 pl-10 text-sm outline-2 placeholder:text-white'
                 id='password'
                 type='password'
                 name='password'
@@ -62,12 +62,12 @@ export default function LoginForm() {
                 required
                 minLength={6}
               />
-              <KeyIcon className='pointer-events-none absolute left-3 top-1/2 h-4.5 w-4.5 -translate-y-1/2 text-white peer-focus:text-gray-900' />
+              <KeyIcon className='pointer-events-none absolute left-3 top-1/2 h-4.5 w-4.5 -translate-y-1/2 text-white peer-focus:text-white/75' />
             </div>
           </div>
         </div>
         <input type='hidden' name='redirectTo' value={callbackUrl} />
-        <button className='mt-4 w-full text-white' aria-disabled={isPending}>
+        <button className='flex gap-2 items-center self-end rounded-3xl py-2 px-4 mt-4 font-bold bg-black text-white transition-all hover:transition-all hover:bg-black/75 cursor-pointer' aria-disabled={isPending}>
           Log in <ArrowRightIcon className='ml-auto h-5 w-5 text-white' />
         </button>
         <div

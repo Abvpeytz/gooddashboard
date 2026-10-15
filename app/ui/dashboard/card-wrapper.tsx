@@ -14,9 +14,10 @@ export default async function CardWrapper() {
 
   return (
     <>
-      {courses.map((course) => (
+      {courses.map((course, i) => (
         <Card
           key={course.id}
+          index={i}
           title={course.title}
           slug={course.slug}
           description={course.description}
